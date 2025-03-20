@@ -1,0 +1,117 @@
+.feedback-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; // For positioning the close button
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #333; // Darker color on hover
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; // Reduced margin for better spacing
+  }
+
+  .feedback-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px; // Space below the subtitle
+  }
+
+  .emoji-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; // Increased space between emojis
+    margin-bottom: 30px; // Increased space below emojis
+
+    .emoji {
+      font-size: 36px; // Larger emojis
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+
+      &:hover {
+        transform: scale(1.2); // Grow on hover
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3)); // Add shadow on hover
+      }
+
+      &.selected {
+        transform: scale(1.4); // Grow when selected
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5)); // Add stronger shadow when selected
+      }
+    }
+  }
+
+  .feedback-prompt {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px; // Space below the prompt
+  }
+
+  .follow-up-prompt {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px; // Space below the follow-up prompt
+  }
+
+  .feedback-input {
+    margin-bottom: 20px;
+  }
+
+  .radio-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; // Space between radio buttons
+    margin-bottom: 20px;
+
+    .radio-button {
+      display: flex;
+      align-items: center;
+      gap: 8px; // Space between circle and text
+      cursor: pointer;
+      font-size: 16px;
+      color: #666;
+
+      input[type="radio"] {
+        display: none; // Hide the default radio button
+      }
+
+      .radio-circle {
+        width: 16px;
+        height: 16px;
+        border: 2px solid #666;
+        border-radius: 50%; // Make it round
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+      }
+
+      input[type="radio"]:checked + .radio-circle {
+        background-color: #1976d2; // Blue color for selected radio button
+        border-color: #1976d2;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      min-width: 150px;
+    }
+  }
+}
